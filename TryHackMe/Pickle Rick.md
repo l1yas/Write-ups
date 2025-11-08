@@ -135,6 +135,10 @@ grep . /home/rick/second\ ingredient
 
 This retrieves the first/second ingredient content.
 
+First Flag : **mr. meeseek hair**
+
+Second Flag : **1 jerry tear**
+
 ---
 
 ## 5 — Privilege escalation
@@ -159,6 +163,8 @@ grep . /root/3rd.txt
 ```
 
 Collect the final flag/ingredient — objective complete.
+
+Third Flag : **fleeb juice**
 
 ---
 
