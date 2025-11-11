@@ -1,53 +1,53 @@
 
-[TryHackMe | Cyber Security Training](https://tryhackme.com/room/lofi)
-
-[Lo-Fi-THM-Walkthrough-By-Reju-Kole](https://systemweakness.com/lo-fi-thm-walkthrough-by-reju-kole-1310cf7fb83c)
+# Walkthrough - TryHackMe "Lo-Fi"
 
 ---
 
-### Walkthrough - TryHackMe "Lo-Fi"
+[TryHackMe | Cyber Security Training](https://tryhackme.com/room/lofi)
 
-### 🛠️ **Objectif : Exploiter une vulnérabilité LFI (Local File Inclusion) pour récupérer des fichiers sensibles.**
+---
+
+### 🛠️ **Objective: Exploit a Local File Inclusion (LFI) vulnerability to retrieve sensitive files.**
 
 ---
 
 ### 🔍 **Reconnaissance**
 
-- La room présente un site web vulnérable à l'inclusion de fichiers locaux.  
-- L'objectif est d'exploiter cette faille pour lire des fichiers critiques.
+- The target web application is vulnerable to Local File Inclusion.  
+- The goal is to exploit this weakness to read critical files on the server.
 
 ---
 
 ### 🏴 **Exploitation - LFI**
 
-1. **Tester la vulnérabilité**
-    - Le site charge des fichiers via un paramètre `page`.
-    - Tester un fichier présent sur le serveur :
+1. **Testing the vulnerability**
+    - The website loads files through a `page` parameter.
+    - Try to load a legitimate file first:
     
     ```text
     http://target.com/?page=about.html
     ```
 
-2. **Remonter l'arborescence et lire `/etc/passwd`**
-    - Si l'application tourne sous Linux, on peut lire la liste des utilisateurs :
+2. **Traverse directories and read `/etc/passwd`**
+    - If the target runs on Linux, attempt to read the list of users:
     
     ```text
     http://target.com/?page=../../../../../etc/passwd
     ```
 
-3. **Récupération du flag**
-    - Essai d’accès à un fichier flag supposé :
+3. **Retrieve the flag**
+    - Try to access a potential flag file:
     
     ```text
     http://target.com/?page=../../../flag.txt
     ```
     
-    - Le flag s'affiche avec cette requête.
+    - The flag is displayed upon successful inclusion.
 
 ---
 
 ### 🔥 **Conclusion**
 
-- La vulnérabilité LFI permet d’accéder à des fichiers sensibles du serveur.  
-- Elle peut être combinée avec d'autres attaques (ex: RCE via log poisoning).  
-- **Contre-mesures :** Valider et filtrer les entrées utilisateur, utiliser des whitelists de fichiers accessibles, et désactiver l'inclusion directe de chemins utilisateur.
+- LFI vulnerabilities allow attackers to access sensitive files stored on the server.  
+- This flaw can often be chained with other exploits, such as Remote Code Execution (RCE) through **log poisoning**.  
+- **Mitigation:** Always validate and sanitize user inputs, apply strict whitelisting of files, and disable direct inclusion of user-controlled paths.
