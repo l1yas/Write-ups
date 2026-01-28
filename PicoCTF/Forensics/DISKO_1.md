@@ -1,6 +1,7 @@
-# picoCTF — DISKO 1 (Write-up)
+# picoCTF — [DISKO 1](https://play.picoctf.org/practice/challenge/505) (Write-up)
 
 **Author:** Darkraicg492
+
 **Category:** Forensics
 
 
