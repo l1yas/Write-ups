@@ -79,7 +79,7 @@ strings disk.dd | grep picoCTF
 The command directly returns the flag:
 
 ```
-picoCTF{1t5_ju5t_4_5tr1n9_e3408eef}
+picoCTF{1t5_ju5t_4_5tr1n9_xxxxxxx}
 ```
 
 
@@ -100,5 +100,5 @@ the flag was simply present as an ASCII string within the disk image.
 ## Final Flag
 
 ```
-picoCTF{1t5_ju5t_4_5tr1n9_e3408eef}
+picoCTF{1t5_ju5t_4_5tr1n9_xxxxxxx}
 ```
