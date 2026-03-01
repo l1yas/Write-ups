@@ -54,7 +54,7 @@ This directory is potentially sensitive and often associated with a login panel 
 ## Summary of Answers:
 
 | Question                             | Answer          |
-|  |  |
+|                                      |                 |
 | How many ports are open?             | `2`             |
 | What version of SSH is running?      | `OpenSSH 7.6p1` |
 | What version of Apache is running?   | `2.4.29`        |
